@@ -335,7 +335,7 @@ def tf_copts(
         if_enable_mkl(["-DENABLE_MKL"]) +
         if_ngraph(["-DINTEL_NGRAPH=1"]) +
         if_android_arm(["-mfpu=neon"]) +
-        if_linux_x86_64(["-msse3"]) +
+        if_linux_x86_64(["-msse3 -std=c++14"]) +
         if_ios_x86_64(["-msse4.1"]) +
         select({
             clean_dep("//tensorflow:framework_shared_object"): [],

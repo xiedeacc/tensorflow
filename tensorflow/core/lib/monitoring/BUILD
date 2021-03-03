@@ -178,6 +178,7 @@ cc_library(
     name = "percentile_sampler",
     srcs = ["percentile_sampler.cc"],
     hdrs = ["percentile_sampler.h"],
+    copts = ["-std=c++14"],
     deps = [
         ":collection_registry",
         ":metric_def",
