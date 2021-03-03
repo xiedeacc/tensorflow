@@ -295,6 +295,7 @@ cc_library(
         "no_oss",
         "nobuilder",
     ],
+    --cxxopt = "-std=c++14",
     deps = [
         "@com_google_absl//absl/base",
         "//tensorflow/core/platform:byte_order",
