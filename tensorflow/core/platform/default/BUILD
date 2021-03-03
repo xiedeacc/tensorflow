@@ -284,7 +284,7 @@ cc_library(
         "//tensorflow/core/platform:profile_utils/cpu_utils.h",
         "//tensorflow/core/platform:snappy.h",
     ],
-    copts = tf_copts(),
+    copts = ["-std=c++14"] + tf_copts(),
     defines = ["TF_USE_SNAPPY"] + select({
         # TF Additional NUMA defines
         "//tensorflow:with_numa_support": ["TENSORFLOW_USE_NUMA"],
@@ -295,7 +295,6 @@ cc_library(
         "no_oss",
         "nobuilder",
     ],
-    --cxxopt = "-std=c++14",
     deps = [
         "@com_google_absl//absl/base",
         "//tensorflow/core/platform:byte_order",
